@@ -36,16 +36,16 @@ public class Move {
         figure.updatePos(newPos);
 
         // convert pawn to queen
-        //convertPawn2Queen(this.board, this.figure);
+        convertPawn2Queen(this.board, this.figure);
     }
 
     public void reverseMove() {  // this changes the current board because it does not make a deepcopy
 
         // convert queen to pawn if it has been a pawn before
-        //if (converted2Queen) {
+        if (converted2Queen) {
             // remove queen from board
-          //  this.board.removeFigure(this.board.board[newPos.x][newPos.y]);
-        //}
+           this.board.removeFigure(this.board.board[newPos.x][newPos.y]);
+        }
 
         // move figure back and remove it from old position:
         this.board.board[newPos.x][newPos.y] = null;
